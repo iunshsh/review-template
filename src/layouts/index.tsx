@@ -22,17 +22,19 @@ const Layout = () => {
     return IconComponent ? <IconComponent /> : undefined;
   };
 
-  const rootRoute = clientRoutes.find((route) => route.path === "/");
-  const menuItems: MenuItem[] =
-    rootRoute?.routes
-      ?.filter((r) => r.path && r.path !== "/login")
+  const getMenuItems = (routes: any[]): MenuItem[] =>
+    routes
+      ?.filter((r) => r.path && r.path !== "/login" && r.name)
       .map((r) => ({
         key: String(r.path),
-        label:
-          typeof (r as any).name === "string" ? (r as any).name : "默认菜单",
-        type: undefined,
-        icon: getIcon((r as any).icon) // 这里转换
+        label: r.name,
+        icon: getIcon(r.icon),
+        children: r.routes ? getMenuItems(r.routes) : undefined,
+        type: undefined
       })) ?? [];
+
+  const rootRoute = clientRoutes.find((route) => route.path === "/");
+  const menuItems: MenuItem[] = getMenuItems(rootRoute?.routes || []);
 
   return (
     <LayoutContainer style={{ height: "100vh" }}>
