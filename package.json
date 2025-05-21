@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "author": "iunshsh@163.com <iunshsh@163.com>",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^6.0.0",
+    "@umijs/plugin-layout": "^0.18.4",
+    "@umijs/plugins": "^4.4.10",
+    "antd": "^5.24.9",
+    "dayjs": "^1.11.13",
+    "moment-timezone": "^0.5.48",
+    "swr": "^2.3.3",
+    "types": "link:@/types",
+    "umi": "^4.4.10"
+  },
+  "devDependencies": {
+    "@types/antd": "^1.0.4",
+    "@types/node": "^22.15.18",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "typescript": "^5.0.3"
+  }
+}
