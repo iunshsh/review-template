@@ -15,9 +15,9 @@ export default [
     icon: "JavaScriptOutlined",
     routes: [
       {
-        path: "/jsTemplate/moduleA",
-        component: "@/pages/JsTemplate/ModuleA",
-        name: "模块A"
+        path: "/jsTemplate/BasicGrammar",
+        component: "@/pages/JsTemplate/BasicGrammar",
+        name: "基础语法"
       },
       {
         path: "/jsTemplate/moduleB",
